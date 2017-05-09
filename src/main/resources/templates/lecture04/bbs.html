@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>掲示板</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="comment:${commentList}">
+        <th:block th:text="${comment}">コメント</th:block>
+    </li>
+    <!-- 上とほぼ同じ
+    <li th:each="comment:${commentList}" th:text="${comment}">コメント</li>
+    -->
+</ul>
+
+<hr />
+
+<form method="post">
+    <input name="comment" /> <button type="submit">書き込む</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>チェックボックス</title>
+</head>
+<body>
+
+<p>
+    好きなプログラミング言語はどれですか？
+</p>
+
+<form method="get">
+    Java <input type="checkbox" name="java" /><br />
+    Kotlin <input type="checkbox" name="kotlin" /><br />
+    Scala <input type="checkbox" name="scala" /><br />
+    <button type="submit">送信</button>
+</form>
+
+<p th:if="${result != null}" th:text="${result}">
+    チェックボックスを送信した結果。
+</p>
+
+</body>
+</html>

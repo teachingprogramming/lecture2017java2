@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>じゃんけん</title>
+</head>
+<body>
+
+<p th:if="${result != null}" th:text="${result}">
+    結果がある場合表示する
+</p>
+
+<form method="post">
+    <input type="radio" name="janken" value="g" checked="checked"/> グー<br />
+    <input type="radio" name="janken" value="c" /> チョキ<br />
+    <input type="radio" name="janken" value="p" /> パー<br />
+    <button type="submit">じゃんけんする</button>
+</form>
+
+</body>
+</html>
