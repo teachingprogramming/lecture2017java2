@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>辞書</title>
+</head>
+<body>
+
+<h2>登録</h2>
+
+<p th:if="${message != null}" th:text="${message}">メッセージ</p>
+
+<form method="post">
+    英語: <input name="english" /><br />
+    日本語: <input name="japanese" /><br />
+    <button type="submit">登録</button>
+</form>
+
+<hr />
+
+<a href="search">検索</a> <a href="list">一覧</a>
+
+</body>
+</html>

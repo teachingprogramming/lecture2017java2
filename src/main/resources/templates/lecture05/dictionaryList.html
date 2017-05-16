@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>辞書</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h2>一覧</h2>
+
+<table>
+    <tr>
+        <th>英語</th>
+        <th>日本語</th>
+    </tr>
+    <tr th:each="english:${dictionary.keySet()}">
+        <td th:text="${english}">英語</td>
+        <td th:text="${dictionary.get(english)}">日本語</td>
+    </tr>
+</table>
+
+<hr />
+
+<a href="register">登録</a> <a href="search">検索</a>
+
+</body>
+</html>
