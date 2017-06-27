@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>メモ帳</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h1>メモ帳</h1>
+
+
+<ul>
+    <li><a href="add">新規作成</a></li>
+</ul>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>日付</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="note:${noteList}">
+        <th th:text="${note.id}">ID</th>
+        <td th:text="${note.title}">タイトル</td>
+        <td th:text="${note.date}">日付</td>
+        <td>
+            <a th:href="@{view/__${note.id}__}">表示</a>
+            <a th:href="@{edit(id=${note.id})}">編集</a>
+            <a th:href="@{delete(id=${note.id})}">削除</a>
+        </td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>

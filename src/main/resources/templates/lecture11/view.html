@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>新規作成 | メモ帳</title>
+</head>
+<body>
+
+<h2>表示</h2>
+
+<dl>
+    <dt>ID</dt>
+    <dd><span th:text="${note.id}">（note.idで置き換わる）</span></dd>
+    <dt>タイトル</dt>
+    <dd><span th:text="${note.title}">（note.titleで置き換わる）</span></dd>
+    <dt>本文</dt>
+    <dd>
+        <p>
+            <th:block th:each="line:${note.getBodyAsList()}">
+                <th:block th:text="${line}">（lineで置き換わる）</th:block><br/>
+            </th:block>
+        </p>
+    </dd>
+</dl>
+
+<hr/>
+<a href="/lecture11/">トップ</a>
+
+</body>
+</html>
