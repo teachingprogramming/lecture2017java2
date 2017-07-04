@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>新規作成 | メモ帳</title>
+</head>
+<body>
+
+<h2>新規作成</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <dl>
+        <dt>タイトル</dt>
+        <dd><input name="title" style="width: 500px"/></dd>
+        <dt>ファイル</dt>
+        <dd><input name="file" type="file"/></dd>
+        <dt>日付</dt>
+        <dd><input name="date" type="date"/></dd>
+    </dl>
+    <button type="submit">保存</button>
+</form>
+
+<hr/>
+<a href="/lecture12/">トップ</a>
+
+</body>
+</html>

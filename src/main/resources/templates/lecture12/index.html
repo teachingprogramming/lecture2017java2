@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>フォトアルバム</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<h1>フォトアルバム</h1>
+
+
+<ul>
+    <li><a href="add">新規追加</a></li>
+</ul>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>サムネイル</th>
+        <th>日付</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="photo:${photoList}">
+        <th th:text="${photo.id}">ID</th>
+        <td th:text="${photo.title}">タイトル</td>
+        <td><img th:src="@{/lecture12/thumbnail/__${photo.filename}__}" th:alt="${photo.title + ' サムネイル'}"/></td>
+        <td th:text="${#dates.format(photo.date, 'yyyy年MM月dd日')}">日付</td>
+        <td>
+            <a th:href="@{view/__${photo.id}__}">表示</a>
+            <a th:href="@{delete(id=${photo.id})}">削除</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
