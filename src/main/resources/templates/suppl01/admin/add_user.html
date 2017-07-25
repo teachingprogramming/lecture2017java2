@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Secret</title>
+</head>
+<body>
+<h1>Suppl01</h1>
+<h2>Admin: ユーザを追加</h2>
+
+<form th:action="@{add_user}" method="post">
+    ユーザ名: <input name="username" /><br/>
+    パスワード: <input name="password" type="password"/><br/>
+    ロール: <select name="role"><option value="ROLE_USER">一般ユーザ</option><option value="ROLE_ADMIN">管理者</option></select><br/>
+    <button type="submit">追加</button>
+</form>
+
+<ul>
+    <li><a href="/suppl01/admin/">戻る</a></li>
+</ul>
+
+<form th:action="@{/suppl01/logout}" method="post">
+    <button type="submit">ログアウト</button>
+</form>
+</body>
+</html>

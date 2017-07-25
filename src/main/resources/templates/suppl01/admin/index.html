@@ -6,13 +6,12 @@
 </head>
 <body>
 <h1>Suppl01</h1>
-<h2>Secret</h2>
+<h2>Admin</h2>
 <p>
-    このページは、ログインしないと見られないページです。
+    このページは、管理者が見られるページです。
 </p>
 <ul>
-    <li><a href="info">アカウント情報を表示</a></li>
-    <li><a href="../admin/">管理者ページへ</a></li>
+    <li><a href="add_user">ユーザを追加</a></li>
 </ul>
 
 <form th:action="@{/suppl01/logout}" method="post">
